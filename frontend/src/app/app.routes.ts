@@ -21,6 +21,7 @@ export const authGuard: CanActivateFn = () => {
   }
 };
 export const routes: Routes = [
+    { path: '', redirectTo: 'usuarios', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'usuarios', component: UsuarioListComponent, canActivate: [authGuard] },
     { path: 'usuarios/novo', component: UsuarioFormComponent, canActivate: [authGuard] },
